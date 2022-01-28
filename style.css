@@ -1,0 +1,118 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:700,300);
+
+/*
+use only the available space inside the 400x400 frame
+ */
+body{
+    margin: 0;
+    width: 100vw;/*Taille totale de l'ecran*/
+    height: 100vh;
+    color: white;
+    font-family: 'Courier New', 'Courier', sans-serif;
+    font-weight:bold;
+}
+.container{
+    width: 100%;
+    height: 100%;
+    scroll-snap-type: y mandatory; /*y = vertically, mandatory or proximity*/
+    /*scroll horizontally
+    * x=horizontal
+    scroll-snap-type: x mandatory;
+    * flex because by default it is row so il will be horozontal
+    display: flex;*/
+    overflow-y: scroll;
+
+}
+.container>section{
+    /* scroll horizontally
+    * remove the flex from the heritage and let the width and height as we specify
+    flex: none;
+     */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    scroll-snap-align: start;
+}
+.challenge{
+    border-radius: 3px;
+}
+.dark{
+    background-color: rgba(0,0,0,0.7);
+}
+.light{
+    background-color: rgba(0,0,0,0.5);
+}
+/* --------------- CHALLENGE 1 --------------- */
+#challenge1{
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    height: 400px;
+    background:linear-gradient(to top right, #43389F 0%, #4ec6ca 100%);
+}
+#challenge1>div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 400px;
+    height: 400px;
+}
+#number{
+    position:relative;
+    height: 100px;
+    width: 200px;
+    display:flex;
+}
+#un{
+    background:white;
+    position:relative;
+    z-index:1;
+    transform:rotate(50deg);
+    border-radius:3px;
+    height:40px;
+    width: 24px;
+    left:3px;
+    top:0;
+    box-shadow: 0 0 13px 0 rgba(0,0,0,0.2);
+}
+#unbarre{
+    background:white;
+    position:relative;
+    left:0;
+    top:2px;
+    z-index:3;
+    border-radius:3px;
+    height:95px;
+    width: 27px;
+    box-shadow: 0 0 13px 0 rgba(0,0,0,0.2);
+}
+#zero-un,#zero-deux{
+    border:22px solid white;
+    position:relative;
+    left:-3px;
+    top:8px;
+    z-index:2;
+    border-radius:50%;
+    height:50px;
+    width: 50px;
+    box-shadow: 0 0 13px 0 rgba(0,0,0,0.2);
+}
+#zero-deux{
+    z-index:1;
+    left:-13px;
+}
+#days{
+    height: 70px;
+    width:200px;
+    font-size:73px;
+    letter-spacing: .04em;
+}
+#cssChallenge{
+    font-size:23px;
+}
+
+/* --------------- CHALLENGE 2 --------------- */
+
