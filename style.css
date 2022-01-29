@@ -5,7 +5,7 @@ use only the available space inside the 400x400 frame
  */
 body{
     margin: 0;
-    width: 100vw;/*Taille totale de l'ecran*/
+    width: 100vw;/*Taille totale de l'écran*/
     height: 100vh;
     color: white;
     font-family: 'Courier New', 'Courier', sans-serif;
@@ -18,7 +18,7 @@ body{
     /*scroll horizontally
     * x=horizontal
     scroll-snap-type: x mandatory;
-    * flex because by default it is row so il will be horozontal
+    * flex because by default it is row so il will be horizontal
     display: flex;*/
     overflow-y: scroll;
 
@@ -37,6 +37,14 @@ body{
 }
 .challenge{
     border-radius: 3px;
+    width: 400px;
+    height: 400px;
+}
+.center{
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
 }
 .dark{
     background-color: rgba(0,0,0,0.7);
@@ -46,10 +54,6 @@ body{
 }
 /* --------------- CHALLENGE 1 --------------- */
 #challenge1{
-    top: 50%;
-    left: 50%;
-    width: 400px;
-    height: 400px;
     background:linear-gradient(to top right, #43389F 0%, #4ec6ca 100%);
 }
 #challenge1>div{
@@ -78,7 +82,7 @@ body{
     top:0;
     box-shadow: 0 0 13px 0 rgba(0,0,0,0.2);
 }
-#unbarre{
+#un-barre{
     background:white;
     position:relative;
     left:0;
@@ -115,4 +119,93 @@ body{
 }
 
 /* --------------- CHALLENGE 2 --------------- */
+#challenge2{
+    background-color: darkslategrey;
+}
+#menu{
+    width:80px;
+    margin:auto;
+    cursor: pointer;
+}
+.barre{
+    background-color:#f2cc8f;
+    width:80px;
+    height:8px;
+    border-radius:3px;
+    box-shadow: 0 0 13px 0 rgba(0,0,0,0.4);
+    margin:12px auto ;
 
+}
+.no-animation{
+    animation:none !important;
+}
+#one{
+    z-index:1;
+
+}
+#two{
+    z-index:0;
+
+}
+#three{
+    z-index:2;
+
+}
+.animate-one{
+    animation:line-one 1s cubic-bezier(0.3,1,0.70,1) forwards;
+}
+.animate-two{
+    animation:line-two 1s cubic-bezier(0.3,1,0.70,1) forwards;
+}
+.animate-three{
+    animation:line-three 1s cubic-bezier(0.3,1,0.70,1) forwards;
+}
+.animate-one-rev{
+    animation:line-one-rev 2s cubic-bezier(0.3,1,0.70,1) forwards;
+}
+.animate-two-rev{
+    animation:line-two-rev 2s cubic-bezier(0.3,1,0.70,1) forwards;
+}
+.animate-three-rev{
+    animation:line-three-rev 2s cubic-bezier(0.3,1,0.70,1) forwards;
+}
+@keyframes line-one{
+    0%{transform:translate(0%, 0%);}
+    50%{transform:translate(0%, 250%) ;}
+    100%{transform:translate(0%, 250%) rotate(45deg);}
+}
+@keyframes line-two{
+    0%{
+        transform:scale(1);
+        opacity:1;
+    }
+    100%{
+        transform:scale(0);
+        opacity:0;
+    }
+}
+@keyframes line-three{
+    0%{transform:translate(0%, 0%);}
+    50%{transform:translate(0%, -250%) ;}
+    100%{transform:translate(0%, -250%) rotate(-45deg);}
+}
+@keyframes line-one-rev{
+    0%{transform:translate(0%, 250%) rotate(-45deg);}
+    50%{transform:translate(0%, 250%) ;}
+    100%{transform:translate(0%, 0% ) ;}
+}
+@keyframes line-two-rev{
+    0%{
+        transform:scale(0);
+        opacity:0;
+    }
+    100%{
+        transform:scale(1);
+        opacity:1;
+    }
+}
+@keyframes line-three-rev{
+    0%{transform:translate(0%, -250%) rotate(45deg);}
+    50%{transform:translate(0%, -250%) ;}
+    100%{transform:translate(0%, 0%) ;}
+}
