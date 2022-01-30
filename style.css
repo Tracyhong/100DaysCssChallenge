@@ -189,6 +189,7 @@ body{
     50%{transform:translate(0%, -250%) ;}
     100%{transform:translate(0%, -250%) rotate(-45deg);}
 }
+
 @keyframes line-one-rev{
     0%{transform:translate(0%, 250%) rotate(-45deg);}
     50%{transform:translate(0%, 250%) ;}
@@ -208,4 +209,163 @@ body{
     0%{transform:translate(0%, -250%) rotate(45deg);}
     50%{transform:translate(0%, -250%) ;}
     100%{transform:translate(0%, 0%) ;}
+}
+
+/* --------------- CHALLENGE 3 --------------- */
+#challenge3{
+    background-color:#272C34;
+}
+.cercle{
+    position:relative;
+    width:200px;
+    height:200px;
+    margin: auto;
+    clip-path: circle(40%);
+    overflow:hidden;
+}
+#sky{
+    background-color:#7DDFFC;
+    position:absolute;
+    width:100%;
+    height:65%;
+    z-index:1;
+    top:0;
+    animation : sky 4s cubic-bezier(.4,0,.49,1) infinite;
+}
+@keyframes sky{
+    0%{
+        background-color:#272C34;
+    }
+    30%{
+        background-color:#7DDFFC;
+    }
+    70%{
+        background-color:#7DDFFC;
+    }
+    100%{
+        background-color:#272C34;
+    }
+}
+#ground{
+    background-color:#F0DE75;
+    position:absolute;
+    width:100%;
+    height:35%;
+    z-index:1;
+    top:65%;
+    animation:ground 4s cubic-bezier(.4,0,.49,1) infinite;
+}
+@keyframes ground{
+    0%{
+        background-color:#272C34;
+    }
+    30%{
+        background-color:#F0DE75;
+    }
+    70%{
+        background-color:#F0DE75;
+    }
+    100%{
+        background-color:#272C34;
+    }
+}
+#sun{
+    background-color:yellow;
+    transform-origin:50% 450%;
+    position:absolute;
+    border-radius:50%;
+    width:30px;
+    height:30px;
+    top:16%;
+    left:42%;
+    z-index:2;
+    animation:sun 4s cubic-bezier(.4,0,.49,1) infinite;
+}
+@keyframes sun{
+    0%{
+        transform:rotate(-90deg);
+        background-color:#272C34;
+    }
+    30%{
+        transform:rotate(-45deg);
+        background-color:yellow;
+    }
+    70%{
+        transform:rotate(45deg);
+        background-color:yellow;
+    }
+    100%{
+        transform:rotate(90deg);
+        background-color:#272C34;
+    }
+}
+#leftPyramid{
+    background-color:#F4F4F4;
+    clip-path: polygon(0 100%,100% 100%, 50% 0);
+    z-index:2;
+    position:absolute;
+    width:116px;
+    height:57px;
+    bottom:35%;
+    left:20%;
+    animation:pyramid 4s cubic-bezier(.4,0,.49,1) infinite;
+}
+
+#rightPyramid{
+    background-color:#DDDADA;
+    clip-path: polygon(60% 100%,100% 100%, 50% 0);
+    z-index:2;
+    position:absolute;
+    width:116px;
+    height:57px;
+    bottom:35%;
+    left:20%;
+    animation:pyramid 4s cubic-bezier(.4,0,.49,1) infinite reverse;
+}
+@keyframes pyramid{
+    0% {
+        background-color:#272C34;
+    }
+
+    30% {
+        background: #F4F4F4;
+    }
+
+    70% {
+        background: #DDDADA;
+    }
+
+    100% {
+        background-color:#272C34;
+    }
+}
+#shadow{
+    background-color:rgba(0,0,0,0.3);
+    z-index:2;
+    position:absolute;
+    width:100%;
+    height:57px;
+    clip-path: polygon(21% 0%, 78% 0%, 100% 10%);
+    top:65%;
+    animation:shadow 4s cubic-bezier(.4,0,.49,1) infinite;
+}
+
+@keyframes shadow{
+    0%{
+        clip-path: polygon(21% 0%, 78% 0%, 100% 10%);
+        background-color:#272C34;
+    }
+    30%{
+        clip-path: polygon(21% 0%, 78% 0%, 100% 40%);
+        background-color:rgba(0,0,0,0.3);
+    }
+
+    70%{
+        clip-path: polygon(21% 0%, 78% 0%, 0% 40%);
+        background-color:rgba(0,0,0,0.3);
+    }
+    100%{
+        clip-path: polygon(21% 0%, 78% 0%, 0% 10%);
+        background-color:#272C34;
+    }
 }
